@@ -1,28 +1,27 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-import DOMLayer from '@/components/hud/DOMLayer';
-import ErrorBoundary from '@/components/ErrorBoundary';
-import VisibleHUD from '@/components/hud/VisibleHUD';
-
-// Strict Lazy Loading to prevent SSR of R3F/WASM components
-const Scene = dynamic(() => import('@/components/canvas/Scene'), {
-  ssr: false,
-});
+import Navbar from '@/components/ui/Navbar';
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Skills from '@/components/sections/Skills';
+import Projects from '@/components/sections/Projects';
+import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-black">
-      <ErrorBoundary>
-        {/* SEO Layer (hidden) */}
-        <DOMLayer />
+    <main className="min-h-screen bg-background text-foreground selection:bg-primary/20">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
 
-        {/* Visible HUD */}
-        <VisibleHUD />
-
-        {/* 3D Scene Layer (Background + Interactive) */}
-        <Scene />
-      </ErrorBoundary>
+      {/* Footer */}
+      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border">
+        <p>© {new Date().getFullYear()} NexGenScaleUp. All rights reserved.</p>
+        <p className="mt-2 opacity-50">Built with Next.js & Tailwind CSS</p>
+      </footer>
     </main>
   );
 }
