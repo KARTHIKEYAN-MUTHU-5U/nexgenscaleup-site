@@ -5,8 +5,8 @@ import { Button } from '../ui/Button';
 const projects = [
     {
         title: "Jobs For You Tamizha",
-        description: "Official portal for the biggest job search community in Tamil Nadu. A comprehensive platform handling thousands of daily users searching for Government and Private sector jobs.",
-        tags: ["High Traffic", "Web Portal", "Android App", "Educational"],
+        description: "Official portal for the biggest job search community in Tamil Nadu. Expanding into the Biggest Education Platform (Coming Soon) offering top-tier courses at affordable prices.",
+        tags: ["High Traffic", "Education Platform", "Web & App", "Affordable Learning"],
         link: "#",
         featured: true
     },
